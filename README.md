@@ -36,6 +36,27 @@ Veteran suicide remains a significant public health crisis. **SALUTE** aims to f
 - **Tool Integration** – Potential to query external crisis-line databases, scheduling systems, or VA resources for context-aware advice or escalation.  
 - **High Accuracy** – Demonstrates near 99% accuracy on a *Suicide Watch* dataset (Kaggle-based), showing potential for real-world mental health screening tasks.
 
+<details> <summary>Click to expand the Mermaid Diagram</summary>
+mermaid
+Copy code
+flowchart LR
+    A([User / Veteran]) -->|Text Messages\nor Chat| B((SALUTE\nInference))
+    B -->|Parameter-Efficient\nFine-Tuned LLM| C{Risk\nClassification}
+    C -->|High Risk| D((Immediate\nIntervention))
+    C -->|Lower Risk| E[Clinician\nAlert / Follow-Up]
+
+    subgraph SALUTE Engine
+    B --> F[LoRA Fine-Tuning]
+    end
+
+    style A stroke:#555,stroke-width:2px,fill:#ddd,stroke-dasharray: 5 5
+    style B stroke:#555,stroke-width:2px,fill:#E9EFEF
+    style C stroke:#555,stroke-width:2px,fill:#AED581
+    style D stroke:#555,stroke-width:2px,fill:#FFCDD2
+    style E stroke:#555,stroke-width:2px,fill:#FFF9C4
+    style F stroke:#555,stroke-width:2px,fill:#E0F7FA
+</details>
+
 ---
 
 ## Getting Started
